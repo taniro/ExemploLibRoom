@@ -15,9 +15,10 @@ class MainActivity : AppCompatActivity() {
             applicationContext,
             AppDatabase::class.java,
             "banco_aula.sqlite"
-        ).allowMainThreadQueries().build()
+        ).fallbackToDestructiveMigration()
+        .allowMainThreadQueries().build()
 
-        val c = Carro(2000, "Corsa", "Vermelho")
+        val c = Carro(2000, "Corsa", "Vermelho", "Nissan")
 
         db.carroDao().inserir(c)
     }

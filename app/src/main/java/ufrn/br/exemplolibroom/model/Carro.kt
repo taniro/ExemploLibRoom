@@ -7,7 +7,8 @@ import androidx.room.PrimaryKey
 data class Carro(
     val ano:Int,
     val modelo:String,
-    var cor:String
+    var cor:String,
+    var marca:String
 ){
     @PrimaryKey(autoGenerate = true)
     var id:Long = 0
